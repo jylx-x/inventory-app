@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  div(class='p-3')
+    d(class='fs-2 text-white') Welcome to the #{title}!
+    div(class='container mt-2')
+      div(class='row row-cols-1 row-cols-md-3 g-5 mt-1')
+        each category in categories 
+          div(class='col')
+            div(class='card h-100')
+              img(src=category.img class='card-img-top')
+              div(class='card-body')
+                h5(class='card-title')= category.name
+                p(class='card-text')= category.description 
+              a(href=category.url class='btn btn-dark' style='background-color: black') Browse

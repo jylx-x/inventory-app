@@ -1,0 +1,31 @@
+extends layout 
+
+block content
+  div.p-3
+    if item
+      p.fs-2.text-white Browse / #{item.category} / #{item.name}
+        div 
+          a.text-white(href='/browse/' + item.category + '/' + item._id) ← Back
+    div.container.bg-white.rounded.p-4
+      form(method='POST' action='')
+        h1.mb-3 #{title}
+        div.form-group
+          label(for= 'name') Item Name:
+          input#name.form-control.my-2(type='text', name='name', value=(undefined===item ? '' : item.name))
+          label(for= 'img') Image Link:
+          input#img.form-control.my-2(type='text', name='img', value=(undefined===item ? '' : item.img))
+          label(for= 'description') Description:
+          input#description.form-control.my-2(type='text', name='description', value=(undefined===item ? '' : item.description))
+          label(for= 'price') Price:
+          input#price.form-control.my-2(type='text', name='price', value=(undefined===item ? '' : item.price))
+          label(for= 'number_in_stock') Quantity in Stock:
+          input#number_in_stock.form-control.my-2(type='text', name='number_in_stock', value=(undefined===item ? '' : item.number_in_stock))
+        if item
+          button.btn.btn-dark.mt-3(type='submit') Update 
+        else
+          button.btn.btn-dark.mt-3(type='submit') Add 
+
+      if errors 
+        ul
+          for error in errors
+            li!= error.msg

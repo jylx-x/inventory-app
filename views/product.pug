@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  div(class='p-3')
+    p(class='fs-2 text-white') Browse / #{product.category} / #{product.name}
+      div 
+        a(href='/browse/' + product.category class='text-white') ← Back
+    div(class='container')
+      div(class='row bg-white align-items-center rounded')
+        img(src= product.img class='col-xs-12 col-md-3 p-3' style='height: 360px; object-fit: scale-down')
+        div(class='col-xs-12 col-md-9 p-5')
+          h1= product.name
+          h4(class='fw-bolder mt-4') Description
+          p= product.description
+          div= product.price 
+          div(class='mt-3')= 'Number in Stock: ' + product.number_in_stock
+          hr
+          p(class='py-1')
+            a(href=product.url+'/delete' class='bg-dark p-2 rounded text-white me-3 text-decoration-none') Delete item
+            a(href=product.url+'/update' class='bg-dark p-2 rounded text-white text-decoration-none') Update item
