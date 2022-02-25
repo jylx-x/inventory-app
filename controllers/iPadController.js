@@ -24,7 +24,7 @@ exports.iPad_create_post = [
   body('name').trim().isLength({ min: 1}).escape().withMessage('Item name is required'),
   body('img').optional({checkFalsy:true}),
   body('description').optional({checkFalsy:true}),
-  body('price').optional({checkFalsy:true}).isNumeric().withMessage('Price must be written with numbers'),
+  body('price').optional({checkFalsy:true}),
   body('number_in_stock').optional({checkFalsy:true}).isNumeric({no_symbols: false}).withMessage('Stock must be written with numbers and not have symbols'),
 
   (req, res, next) => {
@@ -88,7 +88,7 @@ exports.iPad_update_post = [
   body('name').trim().isLength({ min: 1}).escape().withMessage('Item name is required'),
   body('img').optional({checkFalsy:true}),
   body('description').optional({checkFalsy:true}),
-  body('price').optional({checkFalsy:true}).isNumeric().withMessage('Price must be written with numbers'),
+  body('price').optional({checkFalsy:true}),
   body('number_in_stock').optional({checkFalsy:true}).isNumeric({no_symbols: false}).withMessage('Stock must be written with numbers and not have symbols'),
 
   (req, res, next) => {
