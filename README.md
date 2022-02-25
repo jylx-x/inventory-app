@@ -10,7 +10,7 @@ This project utilizes:
   <li>Bootstrap</li>
 </ul>
 
-To see a live demo: https://salty-waters-58408.herokuapp.com/browse
+To see a live demo: https://fathomless-scrubland-25553.herokuapp.com/browse
 
 <h2>Screenshots</h2>
 
